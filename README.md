@@ -6,4 +6,4 @@ Our extension that listens to words and terms, racist, sexist, sexist and ableis
 -----
 
 
-Nossa extensão que escuta palavras e termos, racistas, machistas, sexistas e capacitismo. Apos ser digitado pelo usuário a extensão realiza leitura e realiza a sugestões de termos e palavras de cultura inclusiva 
+Nossa extensão que escuta palavras e termos, racistas, machistas, sexistas e capacitismo. Apos ser digitado pelo usuário a extensão realiza leitura e faz a sugestão de termos e palavras de cultura inclusiva 
