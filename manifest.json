@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Diversity Extension",
+  "description": "Um jeito novo de quebrar preconceitos e aprender todos os dias",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "assets/cit.png",
+    "default_title": "Diversity Extension"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ]
+}
