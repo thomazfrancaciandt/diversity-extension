@@ -2,11 +2,15 @@ const url = "*://chat.google.com/u/0/_/DynamiteWebUi/data/batchexecute*";
 const termsPath = chrome.runtime.getURL("./terms.json");
 const typingCode = "xok6wd";
 
-const getTerms = () => {
-  return fetch(termsPath)
-    .then((response) => response.json())
+chrome.runtime.onInstalled.addListener(() => {
+  fetch(termsPath)
+    .then(async(response)=> {
+      chrome.storage.local.set({
+        terms: await response.json()
+      })
+    })
     .catch((err) => console.log(err));
-}
+});
 
 chrome.webRequest.onBeforeRequest.addListener((details) =>{
   const rawInput = details.requestBody.formData["f.req"][0];
@@ -15,9 +19,11 @@ chrome.webRequest.onBeforeRequest.addListener((details) =>{
     const [[[_, userMessage]]] = JSON.parse(rawInput);
     const [ message ] = JSON.parse(userMessage);
     
-    getTerms()
-    .then((data) => console.log(data));
-
+    
+    chrome.storage.local.get("terms", ({ terms }) => {
+      console.log(terms);
+    });
+    
     console.log(message);
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
