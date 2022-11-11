@@ -19,15 +19,16 @@ chrome.webRequest.onBeforeRequest.addListener((details) =>{
     const [[[_, userMessage]]] = JSON.parse(rawInput);
     const [ message ] = JSON.parse(userMessage);
     
-    
     chrome.storage.local.get("terms", ({ terms }) => {
-      console.log(terms);
-    });
-    
-    console.log(message);
-
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {message});
+      terms.forEach(({ explicacao, sugestoes, termos }) => {
+        termos.split(",").forEach((t) => {
+            if (message.includes(t)) {
+              chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                chrome.tabs.sendMessage(tabs[0].id, { termos, explicacao, sugestoes });
+              });
+            }
+        });
+      })
     });
   }
   

@@ -1,7 +1,8 @@
-chrome.runtime.onMessage.addListener((msg, sender, resp) => {
-  console.log(msg);
+chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 
-  if (msg.message.includes("termo racista")) {
-    confirm(`${msg.message} eh uma palavra indevida.`);
-  }
+  console.log(payload);
+  
+  alert(`Explicaco: ${payload.explicacao}\nSugestoes: ${payload.sugestoes}`)
+
+  console.log(sender);
 });
