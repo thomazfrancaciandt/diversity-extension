@@ -22,9 +22,9 @@ chrome.webRequest.onBeforeRequest.addListener((details) =>{
     chrome.storage.local.get("terms", ({ terms }) => {
       terms.forEach(({ explicacao, sugestoes, termos }) => {
         termos.split(",").forEach((t) => {
-            if (message.includes(t)) {
+            if (message.toLowerCase().includes(t)) {
               chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, { termos, explicacao, sugestoes });
+                chrome.tabs.sendMessage(tabs[0].id, { t, explicacao, sugestoes });
               });
             }
         });

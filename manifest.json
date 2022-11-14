@@ -16,7 +16,13 @@
   },
   "action": {
     "default_icon": "assets/cit.png",
-    "default_title": "Diversity Extension"
+    "default_title": "Diversity extension"
+  },
+  "icons": {
+    "16": "assets/cit.png",
+    "32": "assets/cit.png",
+    "48": "assets/cit.png",
+    "128": "assets/cit.png"
   },
   "host_permissions": [
     "http://*/*",
