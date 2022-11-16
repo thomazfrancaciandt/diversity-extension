@@ -20,11 +20,16 @@ chrome.webRequest.onBeforeRequest.addListener((details) =>{
     const [ message ] = JSON.parse(userMessage);
     
     chrome.storage.local.get("terms", ({ terms }) => {
-      terms.forEach(({ explicacao, sugestoes, termos }) => {
-        termos.split(",").forEach((t) => {
-            if (message.toLowerCase().includes(t)) {
-              chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, { t, explicacao, sugestoes });
+      terms.forEach(({ explicacao: explanation, sugestoes: suggestions, termos: term }) => {
+        term.split(",").forEach((trm) => {
+            if (message.toLowerCase().includes(trm)) {
+              chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+                let payload = {
+                  trm,
+                  explanation,
+                  suggestions
+                };
+                chrome.tabs.sendMessage(tabs[0].id, payload);
               });
             }
         });
