@@ -1,9 +1,49 @@
-# diversity-extension
+## 💻 Sobre o projeto 
 
-Our extension that listens to words and terms, racist, sexist, sexist and ableism. After being typed by the user, the extension reads and makes suggestions for terms and words of inclusive culture
+Algumas palavras, frases e expressões do vocabulário popular carregam uma conotação discriminatória, a ideia da extensão é identificar palavras ou expressões que contenham conteúdo racistas, machistas, sexistas ou de capacitismo que estão sendo digitados no google chat. 
 
+A frase ou expressão utilizada no texto pode ser substituida e pode ajudar a moldar um vocabulário mais inclusivo.
 
------
+---
 
+## ⚙️ Funcionalidades
 
-Nossa extensão que escuta palavras e termos, racistas, machistas, sexistas e capacitismo. Apos ser digitado pelo usuário a extensão realiza leitura e faz a sugestão de termos e palavras de cultura inclusiva 
+Logo ao ser digitado pelo usuário a palavra ou expressão, a extensão realiza leitura e faz uma sugestão que pode substituir o termo ou a palavra digitada por uma sem conotação discriminatória.
+  
+---
+
+## 🚀 Como executar o projeto
+
+Este projeto é divido em dois passos:
+1. Clone da extensão (https://github.com/thomazfrancaciandt/diversity-extension.git) 
+2. Instalção no chrome (chrome://extensions/)
+    * Acessar o link acima;
+    * Clicar em carregar sem compactação;
+    * Ativar chave que aparece ao lado.
+    
+Após a instalação abrir o google chat e testar a aplicação.
+    
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com) para clonar o projeto.
+
+#### 🎲 Rodando a extensão
+
+```bash
+
+# Clone este repositório
+$ git clone https://github.com/thomazfrancaciandt/diversity-extension.git
+
+```
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+1. JavaScript
+
+## 💪 Como contribuir para o projeto
+
+## 🦸 Autor
