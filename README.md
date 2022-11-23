@@ -18,6 +18,7 @@ Este projeto é divido em dois passos:
 1. Clone da extensão (https://github.com/thomazfrancaciandt/diversity-extension.git) 
 2. Instalção no chrome (chrome://extensions/)
     * Acessar o link acima;
+    <img src="https://drive.google.com/file/d/1axUNyNrKIOMHtFbiWNQuUnuR0VJoEC8A/view"/>
     * Clicar em carregar sem compactação;
     * Ativar chave que aparece ao lado.
     
