@@ -36,7 +36,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) =>{
       })
     });
   }
-  
+
   },
   {urls: [url]},
   ['requestBody']

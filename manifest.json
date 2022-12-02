@@ -16,7 +16,7 @@
   },
   "action": {
     "default_icon": "assets/cit.png",
-    "default_title": "Diversity extension"
+    "default_title": "Diversity extension",
   },
   "icons": {
     "16": "assets/cit.png",
