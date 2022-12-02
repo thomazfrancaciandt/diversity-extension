@@ -9,6 +9,8 @@ chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 
   animatePopUp(popUp);
 
+  ClearAnimatePopUp(popUp);
+
 });
 
 const createPopUp = ({ explanation, suggestion, trm }) => {
@@ -43,6 +45,23 @@ const animatePopUp = (popUp) => {
       popUp.style.right = pos + 'px';
     }
   }
+}
+
+const ClearAnimatePopUp = (popUp, chatArea) => {
+  setTimeout(() => {
+    let id = null;
+    let pos = 200;
+    clearInterval(id);
+    id = setInterval(frame, 3);
+    function frame() {
+      if (pos == 0) {
+        clearInterval(id);
+      } else {
+        pos--;
+        popUp.style.right = pos + 'px';
+      }
+    }
+  }, 5_000);
 }
 
 const toTitleCase = str => str.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
