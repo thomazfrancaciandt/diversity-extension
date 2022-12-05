@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 
   animatePopUp(popUp);
 
-  ClearAnimatePopUp(popUp);
+  clearAnimatePopUp(popUp);
 
 });
 
@@ -47,7 +47,7 @@ const animatePopUp = (popUp) => {
   }
 }
 
-const ClearAnimatePopUp = (popUp, chatArea) => {
+const clearAnimatePopUp = (popUp) => {
   setTimeout(() => {
     let id = null;
     let pos = 200;
@@ -56,6 +56,7 @@ const ClearAnimatePopUp = (popUp, chatArea) => {
     function frame() {
       if (pos == 0) {
         clearInterval(id);
+        popUp.style.display = "none";
       } else {
         pos--;
         popUp.style.right = pos + 'px';
