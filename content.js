@@ -1,7 +1,14 @@
 
 chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 
+  //.
   const chatArea = document.querySelector(".AO");
+
+  chatArea.childNodes.forEach((node) => {
+    if (node.classList.contains("DiversityExtensionPopUp")) {
+      chatArea.removeChild(node);
+    }
+  });
 
   const popUp = createPopUp(payload);
 
@@ -16,19 +23,21 @@ chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 const createPopUp = ({ explanation, suggestion, trm }) => {
   const popUp = document.createElement("div");
 
+  popUp.classList.add("DiversityExtensionPopUp");
   popUp.style.background = "#ff9966";
+  popUp.style.fontSize = "17px";
+  popUp.style.display = "block";
   popUp.style.padding = "15px";
   popUp.style.paddingTop = "3px";
   popUp.style.boxSizing = "border-box";
+  popUp.style.wordBreak = "break-word";
   popUp.style.opacity = ".8";
-  popUp.style.overflow = "auto";
   popUp.style.width = "350px";
-  popUp.style.height = "150px";
+  popUp.style.height = "fit-content";
   popUp.style.position = "absolute";
   popUp.style.bottom = "150px";
   popUp.innerHTML = `<h2>\u26A0\uFE0F  ${toTitleCase(trm)}</h2>
-  <p>Algumas palavras, frases e expressões carregam uma conotação discriminatória. A frase ou expressão utilizada no seu texto pode ser substituida e vai ajudar a moldar um vocabulário mais inclusivo, que tal nos ajudar a mudar esse cenário e utilizar as expressões como:
-  <strong>${toTitleCase(suggestion)}</strong> no lugar?</p>`;
+  <p>${explanation} Que tal usar <strong>${toTitleCase(suggestion)}</strong> no lugar?</p>`;
   return popUp;
 }
 
@@ -62,7 +71,7 @@ const clearAnimatePopUp = (popUp) => {
         popUp.style.right = pos + 'px';
       }
     }
-  }, 5_000);
+  }, 20_000);
 }
 
 const toTitleCase = str => str.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
