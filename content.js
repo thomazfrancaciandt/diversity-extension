@@ -18,11 +18,12 @@ chrome.runtime.onMessage.addListener((payload, sender, resp) => {
 
   clearAnimatePopUp(popUp);
 
+
 });
 
 const createPopUp = ({ explanation, suggestion, trm }) => {
   const popUp = document.createElement("div");
-
+  
   popUp.classList.add("DiversityExtensionPopUp");
   popUp.style.background = "#ff9966";
   popUp.style.fontSize = "17px";
@@ -36,9 +37,45 @@ const createPopUp = ({ explanation, suggestion, trm }) => {
   popUp.style.height = "fit-content";
   popUp.style.position = "absolute";
   popUp.style.bottom = "150px";
-  popUp.innerHTML = `<h2>\u26A0\uFE0F  ${toTitleCase(trm)}</h2>
+  popUp.innerHTML = `<button>X</button>`;
+  popUp.innerHTML += `<h2>\u26A0\uFE0F  ${toTitleCase(trm)}</h2>
   <p>${explanation} Que tal usar <strong>${toTitleCase(suggestion)}</strong> no lugar?</p>`;
+
+
+  createCloseButton(popUp);
+
   return popUp;
+}
+
+const createCloseButton = (popUp) => {
+
+  const closeButton = popUp.childNodes[0];
+
+  closeButton.addEventListener("click", () => {
+    popUp.style.display = "none";
+  });
+
+  closeButton.addEventListener("mouseover", () => {
+      closeButton.style.opacity = "1";
+      closeButton.style.transition = "transform .7s ease-in-out";
+      closeButton.style.transform = "rotate(359deg)";
+  });
+    
+  closeButton.addEventListener("mouseleave", () => {
+      closeButton.style.opacity = "0.5";
+      closeButton.style.transform = "rotate(0)";
+  });
+
+  closeButton.innerHTML = "X";
+
+  closeButton.style.width = "32px";
+  closeButton.style.height = "32px";
+  closeButton.style.position = "absolute";
+  closeButton.style.right = "32px";
+  closeButton.style.top = "32px";
+  closeButton.style.opacity = "0.5";
+
+
 }
 
 const animatePopUp = (popUp) => {
@@ -71,7 +108,7 @@ const clearAnimatePopUp = (popUp) => {
         popUp.style.right = pos + 'px';
       }
     }
-  }, 20_000);
+  }, 15_000);
 }
 
 const toTitleCase = str => str.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
