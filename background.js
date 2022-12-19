@@ -13,6 +13,7 @@ chrome.runtime.onInstalled.addListener(async () => {
     }
 });
 
+
 chrome.webRequest.onBeforeRequest.addListener((details) =>{
   const rawInput = details.requestBody.formData["f.req"][0];
 
