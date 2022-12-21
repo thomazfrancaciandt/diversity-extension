@@ -1,49 +1,66 @@
-## 💻 Sobre o projeto 
+# Diversity Extension 
 
-Algumas palavras, frases e expressões do vocabulário popular carregam uma conotação discriminatória, a ideia da extensão é identificar palavras ou expressões que contenham conteúdo racistas, machistas, sexistas ou de capacitismo que estão sendo digitados no google chat. 
+## 💻 Projeto e Funcionalidade
 
-A frase ou expressão utilizada no texto pode ser substituida e pode ajudar a moldar um vocabulário mais inclusivo.
-
----
-
-## ⚙️ Funcionalidades
-
-Logo ao ser digitado pelo usuário a palavra ou expressão, a extensão realiza leitura e faz uma sugestão que pode substituir o termo ou a palavra digitada por uma sem conotação discriminatória.
-  
+Algumas palavras, frases e expressões do vocabulário popular carregam uma conotação discriminatória (racista, machista, sexista e de capacitismo), a ideia da extensão é identificá-las quando digitadas por usuários do google chat.
+Após sua identificação, a extensão oferece uma alternativa que possa substituir a inicialmente digitada, nos ajudando a utilizar um vocabulário mais inclusivo.
+ 
 ---
 
 ## 🚀 Como executar o projeto
 
-Este projeto é divido em dois passos:
-1. Clone da extensão (https://github.com/thomazfrancaciandt/diversity-extension.git) 
-2. Instalção no chrome (chrome://extensions/)
-    * Acessar o link acima;
-    * Clicar em carregar sem compactação;
-    * Ativar chave que aparece ao lado.
-    
-Após a instalação abrir o google chat e testar a aplicação.
-    
+Acessar o link:
+https://github.com/thomazfrancaciandt/diversity-extension.git
 
-### Pré-requisitos
+Faça download do projeto.
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com) para clonar o projeto.
+<p align="center">
+  <img width="800" height="400" src="https://i.imgur.com/Xv2V7Gc.png">
+</p>
 
-#### 🎲 Rodando a extensão
+Acesse a área onde seus downloads estão localizados.    
+<p align="center">
+  <img width="800" height="200" src="https://i.imgur.com/X1cs3pr.png.png">
+</p>
 
-```bash
+Descompactar arquivos.
 
-# Clone este repositório
-$ git clone https://github.com/thomazfrancaciandt/diversity-extension.git
+<p align="center">
+  <img width="800" height="200" src="https://i.imgur.com/TMnIoK3.png">
+</p>
 
-```
----
+Ir até seu navegador e clicar nos três pontinhos a sua direita ao lado da sua foto de perfil e vá até configurações.
 
-## 🛠 Tecnologias
+<p align="center">
+  <img width="800" height="200" src="https://i.imgur.com/FezH7zR.png">
+</p>
 
-As seguintes ferramentas foram usadas na construção do projeto:
-1. JavaScript
+Clicar em extensões.
 
-## 💪 Como contribuir para o projeto
+<p align="center">
+  <img width="800" height="400" src="https://i.imgur.com/NLRumSh.png">
+</p>
 
-## 🦸 Autor
+ Habilitar chave do modo desenvolvedor e clicar em carregar sem compactação. 
+
+<p align="center">
+  <img width="800" height="400" src="https://i.imgur.com/63m1RBs.png">
+</p>
+
+Selecionar apenas a pasta do projeto, não entrar em seus arquivos.
+
+<p align="center">
+  <img width="800" height="200" src="https://i.imgur.com/GmCKzLw.png">
+</p>
+
+A extensão já está apta para testes.
+
+<p align="center">
+  <img width="800" height="200" src="https://i.imgur.com/zY2m2ui.png">
+</p>
+
+Abrir o chat, atualizar com um no teclado F5 e iniciar os testes.
+
+<p align="center">
+  <img width="800" height="400" src="https://i.imgur.com/HLcw8tt.png">
+</p>
