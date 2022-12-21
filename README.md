@@ -59,7 +59,7 @@ A extensão já está apta para testes.
   <img width="800" height="200" src="https://i.imgur.com/zY2m2ui.png">
 </p>
 
-Abrir o chat, atualizar com um no teclado F5 e iniciar os testes.
+Abrir o chat, atualizar com um F5 no teclado e iniciar os testes.
 
 <p align="center">
   <img width="800" height="400" src="https://i.imgur.com/HLcw8tt.png">
